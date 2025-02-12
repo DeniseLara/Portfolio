@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- REMIXICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">   
+</head>
+
+
+<body>
+    <header class="header" id="nav">
+        <nav class="nav container">
+        <div class="logo">
+            <!--<img src="images/logo.png" alt="image" class="logo__image">-->
+            <a href="#" class="logo__content"><p><span class="span">Port</span>folio</p></a>
+        </div>
+    
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link"><i class="ri-home-3-line"></i> Home</a>
+                </li>
+    
+                <li class="nav__item">
+                <a href="#projects" class="nav__link"><i class="ri-file-list-line"></i> Projects</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="#about" class="nav__link"><i class="ri-user-line"></i> About Me</a>
+                </li>
+    
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link button"><i class="ri-chat-1-line"></i> Contact Me</a>
+                </li>
+            </ul>
+    
+            <!--CLOSE BUTTON-->
+            <div class="nav__close" id="nav-close">
+                <i class="ri-close-large-line"></i>
+            </div>
+        </div>
+    
+        <!--TOGGLE MENU-->
+        <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-apps-2-line"></i>
+        </div>
+      </nav>
+    
+        <!--<nav class="navprincipal">
+            <ul class="navprincipal__list">
+             <li class="navprincipal__item"><a class="navprincipal__red" href="#"><img src="images/github.svg" alt=""></a></li>
+             <li class="navprincipal__item"><a class="navprincipal__red" href="#"><img src="images/LinkedIn.svg" alt=""></a></li>
+            </ul>
+        </nav>-->
+    
+    </header>
+   
+    <!-- HERO SECTION -->
+    <div class="principal container" id="home">
+        <h1 class="principal__title">Denise Lara</h1>
+        <h3 class="principal__subtitle">Front End Developer</h3>
+        <p class="principal__description">I can create any website and take your project to the next level.</p>
+        <a class="principal__button" href="#contact">contact me</a>
+    </div>
+
+
+    <!-- PROJECTS SECTION -->
+    <main>
+        <section projects="projects " id="projects">
+        <h2 class="projects__title">Projects</h2>
+
+        <div class="projects__container container">
+         <article class="projects__content">
+            <a href="#" class="projects__image">
+                <img src="images/home.jpeg" alt="" class="projects__image">
+            </a>
+
+            <div class="projects__data">
+                <h3 class="projects__name">CaloriePro</h3>
+                <p class="projects__description">
+                    Aplicación web para buscar calorías, registrar comidas 
+                    y almacenar el historial de ingesta, con un perfil personalizado.
+                </p>
+            </div>
+
+            <div class="projects__skills">
+                <img src="images/html-5.png" alt="image" class="projects__skill">
+                <img src="images/css-3.png" alt="image" class="projects__skill">
+                <img src="images/js.png" alt="image" class="projects__skill">
+                <img src="images/react.png" alt="" class="projects__skill">
+
+            </div>
+
+            <a href="http://localhost:5173/" class="projects__button">
+                <i class="ri-link"></i>
+                <span>Visit Project</span>
+            </a>
+         </article>
+
+         <article class="projects__content">
+            <a href="#" class="projects__image">
+                <img src="images/pagina_recetas.jpg" alt="" class="projects__image">
+            </a>
+
+            <div class="projects__data">
+                <h3 class="projects__name">Recipe Search</h3>
+                <p class="projects__description">
+                    Una página web para explorar distintas recetas apta para todos los
+                    dispositivos
+                </p>
+            </div>
+
+            <div class="projects__skills">
+                <img src="images/html-5.png" alt="image" class="projects__skill">
+                <img src="images/css-3.png" alt="image" class="projects__skill">
+                <img src="images/js.png" alt="image" class="projects__skill">
+                <img src="images/react.png" alt="" class="projects__skill">
+            </div>
+
+            <a href="#" class="projects__button">
+                <i class="ri-link"></i>
+                <span>Visit Project</span>
+            </a>
+         </article>
+
+         <article class="projects__content">
+            <a href="#" class="projects__image">
+                <img src="images/pagina_recetas.jpg" alt="" class="projects__image">
+            </a>
+
+            <div class="projects__data">
+                <h3 class="projects__name">Recipe Search</h3>
+                <p class="projects__description">
+                    Una página web para explorar distintas recetas apta para todos los
+                    dispositivos
+                </p>
+            </div>
+
+            <div class="projects__skills">
+                <img src="images/html-5.png" alt="image" class="projects__skill">
+                <img src="images/css-3.png" alt="image" class="projects__skill">
+                <img src="images/js.png" alt="image" class="projects__skill">
+                <img src="images/react.png" alt="" class="projects__skill">
+            </div>
+
+            <a href="#" class="projects__button">
+                <i class="ri-link"></i>
+                <span>Visit Project</span>
+            </a>
+         </article>
+        </div>
+        </section>
+    </main>
+
+     <!-- ABOUT ME SECTION -->
+    <div class="about__container container" id="about">
+    <div class="aboutme">
+        <h2 class="aboutme__title">About me</h2>
+        <p class="aboutme__description">¡Hi! I'm Denise Lara, a self-taught web developer.
+            I'm passionate about creating modern and functional websites, always with the user in mind. I started my journey in web development in 2024, 
+            learning on my own and developing practical projects that have helped me consolidate my skills
+        </p>
+    </div>
+
+    <section class="skills container">
+        <h2 class="skills__title">Skills</h2>
+        <div class="skills__container">
+            <article class="skills__content">
+            <h2 class="skills__content-title">HTML</h2>
+            <p class="skills__content-subtitle">intermediate</p>
+            </article>
+
+            <article class="skills__content">
+            <h2 class="skills__content-title">CSS</h2>
+            <p class="skills__content-subtitle">intermediate</p>
+            </article>
+
+            <article class="skills__content">
+            <h2 class="skills__content-title">JAVASCRIPT</h2>
+            <p class="skills__content-subtitle">intermediate</p>
+            </article>
+
+            <article class="skills__content">
+            <h2 class="skills__content-title">REACT</h2>
+            <p class="skills__content-subtitle">intermediate</p>
+            </article>
+            </div>
+    </section>
+</div>
+
+    
+   <!-- CONTACT SECTION -->
+    <div class="contact container" id="contact">
+        <div class="contact__content">
+ <h2 class="contact__title">Contact</h2>
+  <p class="contact__description">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
+</div>
+  <form id="contact-form" class="contact__form">
+    <input type="text" class="contact__form-input" placeholder="NAME" name="name" required>
+    <input type="email" class="contact__form-input" placeholder="EMAIL" name="email" required>
+    <textarea type="text" class="contact__form-input message" placeholder="MESSAGE" name="message" required></textarea>
+    <button type="submit" class="contact__form-button">Send message</button>
+    <div id="formMessage" class="form-message"></div>
+
+  </form>
+
+ </div>
+
+
+    <!-- FOOTER SECTION -->
+    <footer>          
+         <div class="footer container">
+          <div class="footer-socials">
+            <ul class="footer-socials-list">
+                <li class="footer-socials-item">
+                    <a class="footer-socials-link" href="#"><i class="ri-linkedin-box-fill"></i></a>
+                </li>
+                <li class="footer-socials-item">
+                    <a class="footer-socials-link" href="#"><i class="ri-github-fill"></i></a>
+                </li>
+                <li class="footer-socials-item">
+                    <a class="footer-socials-link" href="#"><i class="ri-discord-fill"></i></a>
+                </li>
+               </ul>
+          </div>
+
+          <div className="footer-links">
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul className="footer-link-list">
+              <li><a class="footer-link" href="#home" id="home">Home</a></li>
+              <li><a class="footer-link" href="#projects" id="projects">Projects</a></li>
+              <li><a class="footer-link" href="#about" id="about">About me</a></li>
+              <li><a class="footer-link" href="#contact" id="contact">Contact me</a></li>
+            </ul>
+          </div>
+       
+          <div class="footer-credits-rights">
+            <ul class="footer-credits-rights-list">
+            <li>Icons provided by <a class="footer-credits-right" href="https://remixicon.com/" target="_blank" >Remix Icon</a></li> 
+            <li>Images from <a class="footer-credits-right" href="https://www.flaticon.com/" target="_blank" >Flaticon</a></li>
+            <li>fonts by <a class="footer-credits-right" href="https://fonts.google.com/" target="_blank" >Google Fonts</a></li>
+        </ul>
+        </div>
+    </div>
+
+          <div class="footer__credits">
+            <p class="footer__credits-title">© 2024 Denise Lara. All rights reserved.</p>
+         
+          </div>
+    </footer>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>
