@@ -1,5 +1,3 @@
-//const { Scrollbar } = require("swiper/modules")
-
 
 /*SHOW MENU*/
 const navMenu = document.getElementById("nav-menu"),
@@ -33,19 +31,32 @@ navLink.forEach(n => n.addEventListener("click", linkAction))
 /*CAMBIAR EL BACKGROUND DEL HEADER*/
 const header = document.getElementById('nav');
 
-window.addEventListener('scroll', () => {
+function handleScroll() {
   if (window.scrollY > 50) {
     header.classList.add('bg-header');
   } else {
     header.classList.remove('bg-header');
-
   }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+//ANIMATIONS
+document.addEventListener('DOMContentLoaded', () => {
+  const sr = ScrollReveal({
+    origin: "top",
+    distance: "100px",
+    duration: 2500,
+    delay: 400,
+  });
+
+  sr.reveal(`.principal, .projects,  .projects__title`);
+  sr.reveal(`.contact__description, .aboutme__description`, { origin: 'right' });
+  sr.reveal(` .footer`, { interval: 30 });
 });
 
 
-
 //SEND CONTACT FORM
-
 
 // Función para validar el formato del correo electrónico
 function validateEmail(email) {
@@ -60,28 +71,36 @@ function isValidDomain(email) {
   return validDomains.includes(domain);
 }
 
+// Función para mostrar el mensaje y ocultarlo después de unos segundos
+function showMessage(message, type) {
+  const formMessage = document.getElementById('form-message');
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}`;
+  formMessage.style.display = 'block';
+
+  // Ocultar el mensaje automáticamente después de 5 segundos
+  setTimeout(() => {
+    formMessage.style.display = 'none';
+  }, 5000); // 5000 ms = 5 segundos
+}
+
 // Captura el formulario y maneja el evento de envío
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault(); // Evita que la página se recargue
 
-  const formMessage = document.getElementById('formMessage');
   const email = document.querySelector('input[name="email"]').value;
   const message = document.querySelector('textarea[name="message"]').value;
   const name = document.querySelector('input[name="name"]').value;
 
   // Validar si el correo tiene un formato válido
   if (!validateEmail(email)) {
-    formMessage.textContent = 'Please enter a valid email address.';
-    formMessage.className = 'form-message error';
-    formMessage.style.display = 'block';
+    showMessage('Please enter a valid email address.', 'error');
     return; // Detiene el envío si el correo no es válido
   }
 
   // Validar si el dominio del correo está permitido
   if (!isValidDomain(email)) {
-    formMessage.textContent = 'The email domain is not allowed.';
-    formMessage.className = 'form-message error';
-    formMessage.style.display = 'block';
+    showMessage('The email domain is not allowed.', 'error');
     return; // Detiene el envío si el dominio no está permitido
   }
 
@@ -93,22 +112,16 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     },
     body: JSON.stringify({ email, name, message }), // Convertimos los datos a JSON
   })
-    .then(response => response.json())
-    .then(data => {
+    .then((response) => response.json())
+    .then((data) => {
       if (data.success) {
-        formMessage.textContent = 'Your message has been sent successfully!';
-        formMessage.className = 'form-message success';
-        formMessage.style.display = 'block';
+        showMessage('Your message has been sent successfully!', 'success');
       } else {
-        formMessage.textContent = 'There was an error sending your message. Please try again later.';
-        formMessage.className = 'form-message error';
-        formMessage.style.display = 'block';
+        showMessage('There was an error sending your message. Please try again later.', 'error');
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.log('Error al enviar el correo:', error);
-      formMessage.textContent = 'There was an error sending your message. Please try again later.';
-      formMessage.className = 'form-message error';
-      formMessage.style.display = 'block';
+      showMessage('There was an error sending your message. Please try again later.', 'error');
     });
 });
