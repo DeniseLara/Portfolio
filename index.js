@@ -105,7 +105,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   }
 
   // Si todo es válido, enviamos los datos al backend en Python
-  fetch("http://127.0.0.1:5000/send-email", {
+  fetch("https://portfolio-1-5lml.onrender.com/send-email", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json', // Cambié FormData por JSON
