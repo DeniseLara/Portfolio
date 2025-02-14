@@ -271,6 +271,7 @@ html{
     .nav__link.button{
         padding: 0.5rem 1rem;
         border-radius: 1rem;
+        display: inline-block;
         transition: all .4s;
         border: 1px solid var(--header-gray-color);
     }

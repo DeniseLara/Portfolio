@@ -50,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
     delay: 400,
   });
 
-  sr.reveal(`.principal, .projects,  .projects__title`);
-  sr.reveal(`.contact__description, .aboutme__description`, { origin: 'right' });
+  sr.reveal(`.principal, .projects`);
+  sr.reveal(`.aboutme`, { origin: 'right' });
+  sr.reveal(`.contact`, { origin: 'left' });
   sr.reveal(` .footer`, { interval: 30 });
 });
 
