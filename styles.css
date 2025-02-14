@@ -77,7 +77,6 @@ html{
         top: 0;
         right: -100%;
         background-color: var(--menu-color) ;
-        width: 65%;
         height: 100%;
         z-index: 100;
         padding: 7.5rem 4rem;
@@ -229,6 +228,7 @@ html{
     font-size: 1rem; 
     font-weight: 400; 
     text-align: end;
+    margin-top: 0.5rem ;
     background-color: var(--gray-color);
     border: 1px solid var(--header-gray-color);
     color: var(--light-gray);
@@ -264,7 +264,7 @@ html{
     }
   
     .nav__menu{
-      width: 70%;
+      width: 80%;
     }
 
     .nav__link.button{
@@ -469,13 +469,6 @@ html{
   .contact__form-button:hover {
     background-color: var(--dark-blue);
   }
-  
-  .form-message {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: var(--light-gray);
-  }  
 
     .footer-socials-list{
        display: flex;
@@ -588,7 +581,7 @@ html{
     }
 
     .nav__menu{
-        width: 55%;
+        width: 50%;
     }
 
     .principal__button{
