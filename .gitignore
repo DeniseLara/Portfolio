@@ -60,6 +60,10 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.vscode/
+__pycache__/
+venv/
+cv/
 
 # dataconnect generated files
 .dataconnect
