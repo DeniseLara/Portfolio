@@ -13,7 +13,6 @@
     --header-gray-color: #555555;
 }
 
-
 *{
     margin: 0;
     padding: 0;
@@ -30,7 +29,8 @@ body{
 
 html{
     scroll-behavior: smooth;
-}
+    overflow-x: hidden;
+}  
 
 .logo__content p span{
    color: var(--white-color);
@@ -38,13 +38,18 @@ html{
 
 .header{
     position: fixed;
-    padding-top: 0.2rem;
-    width: 100%;
     top: 0;
+    height: 3.5rem; /* Ajustado para incluir el padding sin crecer */
+    padding: 0 0.5rem; /* Quitamos el padding vertical */
+    box-sizing: border-box;
     left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
     background-color: transparent;
     z-index: 100;
-    transition: background-color .4s;   
+    align-items: center;
+    transition: background-color .3s;   
 }
 
 .logo__content{
@@ -54,9 +59,9 @@ html{
 
 .nav{
     position: relative;
-    height: 3.5rem;
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
 }
 
@@ -71,7 +76,7 @@ html{
 
 
 /*---NAVIGATION FOR MOBILE DEVICES---*/
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
     .nav__menu{
         position: fixed;
         top: 0;
@@ -108,25 +113,29 @@ html{
 .nav__link:hover{
     color: var(--blue-color);
 }
+
+.nav__link.active {
+    color: var(--blue-color);
+}
+
   
 .nav__close{
     position: absolute;
     top: 1rem;
     right: 1.5rem;
 }
-  
-.navprincipal__list{
-    display: flex;
-    gap: 1rem; 
-    justify-content: center;
-}
 
 .principal{
-    padding-top: 10rem;
-    text-align: center;
+    padding-top: 9rem;
     margin-bottom: 8rem;
-    margin-inline: 1.5rem;
+    text-align: center;
 }
+
+.logo__content:hover,
+.logo__content:focus{
+    outline: none;
+}
+
 
 .principal__title{
     font-size: 3.5rem;
@@ -242,10 +251,64 @@ html{
     border: 1px solid var(--dark-blue);
 }
 
+.principal__image:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        rgba(68, 144, 177, 0.5) 0px 5px 20px,  
+        rgba(14, 30, 37, 0.5) 0px 10px 20px,  
+        rgba(0, 0, 0, 0.5) 0px 5px 16px;       
+    transition: all 0.3s ease-in-out;
+}
 
-/*---MEDIAS QUERYS---*/
 
+
+/*--- MEDIAS QUERYS ---*/
 @media (min-width: 340px){
+
+    .principal__image {
+        display: block;
+        border: 1.5px solid var(--dark-blue);
+        width: 40vw; /* 40% del ancho del viewport */
+        height: 40vw; /* Asegura que la altura sea igual al ancho */
+        max-width: 100%; /* Limita el tamaño máximo a 10 rem */
+        max-height: 100%; /* Limita la altura máxima a 10 rem */ 
+        overflow: hidden; 
+        border-radius: 50%; 
+        box-shadow: 0 6px 30px rgba(76, 74, 74, 0.5); 
+        position: relative;
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; 
+        opacity: 0.55;
+        flex-shrink: 0; 
+    }
+
+    .principal__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: top; 
+        border-radius: 50%;
+    }
+
+    .principal__title{
+        font-size: 2.5rem;
+    }
+
+    .principal__content{
+        max-width: 100%;
+    }
+
+    .principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .principal__image{
+        margin-bottom: 1.5rem;
+    }
 
     .principal__subtitle{
         font-size: 1.2rem;
@@ -270,9 +333,9 @@ html{
         padding-left: 8%;
         padding-right: 8%;
     }
-  
+
     .nav__menu{
-      width: 80%;
+        width: 82%;
     }
 
     .nav__link.button{
@@ -349,20 +412,16 @@ html{
     .skills{
         border-radius: 2rem;
         color: var(--white-color);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
         margin-bottom: 6rem;
         padding-top: 1rem;
-        padding: 1rem;
-        background-color: var(--gray-color);
     }
 
     .aboutme__title{
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: #FFFF00;
+        text-align: center;
         text-transform: uppercase;
     }
 
@@ -374,7 +433,7 @@ html{
     .aboutme{
         text-align: center;
         text-wrap: pretty;
-        margin-bottom: 4rem;
+        margin-bottom: 1.5rem;
         padding-top: 4rem;
     }
 
@@ -383,30 +442,59 @@ html{
         font-family: "Merriweather", serif;
         text-transform: uppercase;
         margin-bottom: 1.8rem;
-        font-weight: 800;
+        font-weight: 900;
         letter-spacing: 0.4rem;
         color:  #F5F5DC;
     }
 
     .skills__container{
-        display: flex;
-        gap: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
         text-align: center;
     }
 
     .skills__content{
+        transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), 
+        box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), 
+        background-color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+        border-color 0.3s ease-in-out;
         font-size: 0.9rem;
-        transition:.4s;
-        margin-bottom: 1.5rem; 
+        will-change: transform, box-shadow, background-color;
+        overflow: hidden;
+        position: relative;
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: var(--gray-color);
+        border: 1px solid transparent; /* Se establece un borde invisible para que no afecte el border del hover
+        a los demás skills__content */
     }
 
-    .skills__content-title{
+    /* Efecto hover */
+   .skills__content:hover {
+    transform:translateY(-0.5rem);
+    background: #252525; 
+    box-shadow: 0px 4px 16px rgba(34, 114, 255, 0.3); 
+    border: 1px solid rgba(34, 114, 255, 0.5); 
+  }
+  
+  /* Sutil brillo en el icono */
+  .skills__content-title i {
+    font-size: 3rem;
+    margin-bottom: 0.6rem;
+        font-size: 3rem;
         color: var(--light-gray);
-    }
-
+    transition: text-shadow 0.3s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  .skills__content:hover .skills__content-title i {
+    opacity: 0.9;
+    text-shadow: 0px 0px 8px rgba(34, 114, 255, 0.5); /* Brillo suave en el icono */
+    transform: scale(1.15); /* Aumenta ligeramente el tamaño */
+  }
+  
    .contact {
     display: flex;
     flex-direction: column;
@@ -567,7 +655,40 @@ html{
 }
 
 
+@media (min-width:360px){
+    .nav__menu{
+        width: 78%;
+    }
+}
+
+
+@media (min-width:400px){
+    .nav__menu{
+        width: 68%;
+      }
+}
+
+
 @media (min-width: 768px){
+    .principal__image {
+        width: 36vw; /* 40% del ancho del viewport */
+        height: 36vw; /* Asegura que la altura sea igual al ancho */
+    }
+    
+    .principal__content{
+        text-align: start;
+    }
+
+    .principal{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+
+    .nav__close{
+        right: 2.5rem;
+    }
 
     .nav.container{
         padding-left: 5%;
@@ -579,8 +700,8 @@ html{
     .principal.container,
     .footer.container,
     .contact.container{
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 8%;
+        padding-right: 8%;
     }
 
     .projects__container{
@@ -592,25 +713,16 @@ html{
         width: 50%;
     }
 
-    .principal__button{
-       font-size: 1.5rem; 
-    }
-
-    .principal{
-        max-width: 100%;
-        margin-top: 3rem;
-    }
-
     .principal__title{
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     .principal__subtitle{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .principal__description{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .projects__content{
@@ -622,7 +734,6 @@ html{
         text-align: center;
         gap: 2rem;
         margin-bottom: 2rem;
-        padding-top: 4.5rem;
     }
 
     .skills{
@@ -636,13 +747,7 @@ html{
 
     .skills__content-subtitle{
         font-size: 1rem;
-    }
-
-    .skills__container{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);        
-        gap: 1rem; 
+        font-weight: 600;
     }
 
     .contact {
@@ -666,19 +771,40 @@ html{
         text-align: start;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 5rem;
+        margin-bottom: 10rem;
     }
 
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
+    .principal{
+        padding-top: 10rem;
+    }
+
+    .principal__image{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .header{
+        height: 4.5rem;
+    }
+
+    .projects__container.container,
+    .about__container.container,
+    .principal.container,
+    .footer.container,
+    .contact.container{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .projects__container{
+        gap: 1.5rem;
+    }
 
     .logo__content{
         font-size: 1.8rem;
-    }
- 
-    .nav{
-        height: 5.5rem;
     }
  
     .nav__menu i{
@@ -688,7 +814,11 @@ html{
     .nav__menu{
         width: auto;
     }
- 
+
+    .skills__content-title i{
+        font-size: 3rem;
+    }
+
     .nav__list{
         gap: 4rem;
     }
@@ -707,12 +837,8 @@ html{
         align-items: center;
     }
 
-    .principal{
-        max-width: 100%;
-    }
-
     .principal__title{
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .principal__description{
@@ -720,7 +846,19 @@ html{
     }
 
     .projects__title{
-        font-size: 3rem;
+        padding-top: 5rem;
+    }
+
+    .aboutme{
+        padding-top: 5rem;
+    }
+
+    .footer-socials-link {
+        font-size: 2.5rem;
+     }
+
+    .projects__title{
+        font-size: 2.5rem;
     }
 
     .aboutme__description{
@@ -745,13 +883,36 @@ html{
         font-size: 1.2rem;
       }
 
+    .principal__button{
+        font-size: 1.5rem;
+    }
+
 }
 
 
-@media (min-width: 1150px){
+@media (min-width: 1280px){
 
-    .nav{
-        height: 5.5rem;
+    .header{
+        height: 6rem;
+    }
+
+    .principal__image {
+        width: 30vw; /* 40% del ancho del viewport */
+        height: 30vw; /* Asegura que la altura sea igual al ancho */
+    }
+
+   .principal{
+    margin-bottom: 4rem;
+    padding-top: 4rem;
+    min-height: 100vh; /* Suponiendo que el navbar mide 80px */
+   }
+
+   .projects{
+    min-height: calc(100vh - 6rem); /* Suponiendo que el navbar mide 80px */
+   }
+
+    .principal__content{
+        text-align: start;
     }
 
     .nav__list{
@@ -771,27 +932,17 @@ html{
         flex-direction: row;
         align-items: center;
     }
-
-    .principal{
-        margin-top: 2rem;
-       
-    }
     
     .principal__title{
-        padding-top: 1rem;
-        font-size: 7rem;
+        font-size: 4.5rem;
     }
 
     .principal__description{
         font-size: 1.2rem;
     }
 
-    .principal__button{
-        font-size: 1.6rem;
-    }
-
     .projects__title{
-        padding-top: 6rem;
+        padding-top: 7rem;
         margin-bottom: 4.5rem;
     }
  
@@ -800,17 +951,22 @@ html{
     }
 
     .about__container{
+        min-height: calc(100vh - 6rem); /* Suponiendo que el navbar mide 80px */
         display: flex;
         justify-content: center;
+        flex-direction: column;
         gap: 2rem;
+        margin-top: 0rem;
         padding: 2.5rem;
-        padding-top: 8rem;
         margin-bottom: 4rem;
     }
 
     .aboutme{
         text-align:start;
-        padding-top:0;
+    }
+
+    .aboutme{
+        padding-top: 4rem;
     }
 
     .aboutme__description{
@@ -825,6 +981,15 @@ html{
         padding-top: 0;
     }
 
+    .skills__container{
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+
     .skills__title{
         text-align: center;
     }
@@ -832,10 +997,6 @@ html{
     .skills__content{
         padding: 2rem;
         margin-bottom: 0;
-    }
-
-    .footer-socials-link{
-        font-size: 2.5rem;
     }
 
     .footer__credits-rights-list{
@@ -847,42 +1008,139 @@ html{
     }
 }
 
+@media (min-width:1920px){
+
+    .header{
+        padding: 2rem 0.5rem;
+    }
+
+    .principal__image{
+        width: 28vw;
+        height: 28vw;
+    }
+
+    .principal{
+        gap: 0rem;
+        justify-content: space-around;
+        margin-bottom: 4rem;
+    }
+   
+    .nav__link,
+    .logo{
+        font-size: 1.5rem;
+    }
+    .principal__title{
+        font-size: 5.5rem;
+    }
+
+    .principal__description{
+        font-size: 1.5rem;
+    }
+
+    .principal__button{
+        font-size: 1.8rem;
+    }
+
+    .projects__title{
+        padding-top: 8rem;
+    }
+
+    .projects__container{
+        gap: 2.5rem;
+        display: flex;
+    }
+
+    .projects__name{
+        font-size: 2rem;
+    }
+
+    .projects__description{
+        font-size: 1.5rem;
+    }
+
+    .projects__button{
+        font-size: 1.5rem;
+    }
+
+    .contact{
+        min-height: calc(50vh - 6rem); /* Suponiendo que el navbar mide 80px */
+    }
+
+    .aboutme__title,
+    .projects__title{
+        font-size: 3.5rem;
+    }
+
+    .aboutme__description{
+        font-size: 1.5rem;
+    }
+
+    .skills__content-title i{
+        font-size: 4.5rem;
+    }
+
+    .skills__content-subtitle{
+        font-size: 1.5rem;
+    }
+
+    .skills__title{
+        font-size: 2.8rem;
+    }
+
+    .contact__title{
+        font-size: 3.5rem;
+    }
+
+    .contact__description{
+        font-size: 1.5rem;
+    }
+
+    .contact__form-button{
+        font-size: 1.5rem;
+    }
+
+    .footer{
+        margin-bottom: 10rem;
+    }
+
+    .footer-socials-link i{
+        font-size: 3.5rem;
+    }
+
+    .footer-links-title{
+        font-size: 1.8rem;
+    }
+
+    .footer-link{
+        font-size: 1.5rem;
+    }
+
+    .footer-credits-rights-list{
+        font-size: 1.5rem;
+    }
+
+    .footer__credits-title{
+        font-size: 1.4rem;
+    }
+
+    .footer{
+        border-top: 1.5px solid var(--gray-color);
+    }
+}
+
 
 /*---SHOW MENU---*/
-
 .show-menu{
     right: 0;
 }
 
 .bg-header{
-    background-color: var(--header-scroll-color);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 1); 
-    transition: background-color 0.4s ease;
+    background-color: var(--menu-color) ;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9); 
 }
 
-.bg-header .span{
-    color: var(--header-gray-color);
-}
 
-.bg-header .show-menu{
-    background-color: var(--header-scroll-color);
-}
 
-.bg-header .nav__toggle, .nav__close{
-    color: var(--header-gray-color);
-}
-
-.bg-header .nav__link{
-    color: var(--menu-color);
-}
-
-.bg-header .nav__link:hover{
-    color: var(--blue-color);
-}
-
-.color-change-span{
-    color: var(--body-color);
-}
 
 
 

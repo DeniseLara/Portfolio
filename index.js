@@ -15,6 +15,7 @@ if(navToggle){
 if(navClose){
     navClose.addEventListener("click", () =>{
         navMenu.classList.remove("show-menu")
+        handleScroll(); // Volver a evaluar si el navbar debe tener bg-header o no
     })
 }
 
@@ -27,6 +28,52 @@ const linkAction = () =>{
     navMenu.classList.remove("show-menu")
 }
 navLink.forEach(n => n.addEventListener("click", linkAction))
+
+
+/* MANTENER ACTIVO LINKS */
+// Obtener todos los enlaces y secciones
+const navLinks = document.querySelectorAll('.nav__link');
+const sections = document.querySelectorAll('section');
+
+// Función para activar el link correspondiente
+function setActiveLink() {
+    let currentSection = null;
+
+    // Detectar cuál es la sección visible
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.id;
+        }
+    });
+
+    // Quitar la clase 'active' de todos los links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Añadir la clase 'active' al link correspondiente
+    if (currentSection) {
+        const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    }
+}
+
+// Activar 'Home' por defecto al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('home').classList.add('active');
+});
+
+// Escuchar el scroll para actualizar el link activo
+window.addEventListener('scroll', setActiveLink);
+
+// Llamar la función al cargar la página para verificar el estado inicial
+setActiveLink();
+
+
 
 /*CAMBIAR EL BACKGROUND DEL HEADER*/
 const header = document.getElementById('nav');
@@ -45,15 +92,15 @@ window.addEventListener('scroll', handleScroll);
 document.addEventListener('DOMContentLoaded', () => {
   const sr = ScrollReveal({
     origin: "top",
-    distance: "100px",
+    distance: "2rem",
     duration: 2500,
     delay: 400,
   });
 
   sr.reveal(`.principal, .projects`);
-  sr.reveal(`.aboutme`, { origin: 'right' });
-  sr.reveal(`.contact`, { origin: 'left' });
-  sr.reveal(` .footer`, { interval: 30 });
+  sr.reveal(`.aboutme`, { origin: 'right', distance: "1rem" });
+  sr.reveal(`.contact`, { origin: 'left', distance: "1rem" });
+  sr.reveal(` .footer`);
 });
 
 
@@ -126,3 +173,4 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
       showMessage('There was an error sending your message. Please try again later.', 'error');
     });
 });
+

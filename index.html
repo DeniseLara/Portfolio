@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="images/logoo.jpg" type="image/jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="styles.css">
-    <!--SCROLL ANIMATIONS-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- GOOGLE FONTS -->
+    
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@latest/fonts/remixicon.css"> 
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- REMIXICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">   
 </head>
 
 
+
 <body>
+    <!--NAVBAR SECTION-->
     <header class="header" id="nav">
         <nav class="nav container">
         <div class="logo">
@@ -58,19 +64,28 @@
         </div>
       </nav>
     </header>
+
    
     <!-- HERO SECTION -->
-    <div class="principal container" id="home">
+    <section class="principal container" id="home">
+
+    <div class="principal__image">
+        <img src="./images/denisee.jpg" alt="Denise Lara" class="principal__img">
+    </div>
+  
+    <div class="principal__content">
         <h1 class="principal__title">Denise Lara</h1>
         <h3 class="principal__subtitle">Frontend Developer</h3>
         <p class="principal__description">I can create any website and take your project to the next level.</p>
         <a class="principal__button" href="/cv/Denise (2).pdf">Download CV</a>
     </div>
+    
+    </section>
 
 
     <!-- PROJECTS SECTION -->
     <main>
-        <section projects="projects " id="projects">
+        <section projects="projects" id="projects">
         <h2 class="projects__title">Projects</h2>
 
         <div class="projects__container container">
@@ -127,12 +142,13 @@
         </div>
         </section>
     </main>
+    
 
      <!-- ABOUT ME SECTION -->
-    <div class="about__container container" id="about">
+    <section class="about__container container" id="about">
     <div class="aboutme">
         <h2 class="aboutme__title">About me</h2>
-        <p class="aboutme__description">¡Hi! I'm Denise Lara, a self-taught web developer.
+        <p class="aboutme__description">¡Hi! I'm a self-taught Frontend developer.
             I'm passionate about creating modern and functional websites, always with the user in mind. I started my journey in web development in 2024, 
             learning on my own and developing practical projects that have helped me consolidate my skills.
         </p>
@@ -142,31 +158,41 @@
         <h2 class="skills__title">Skills</h2>
         <div class="skills__container">
             <article class="skills__content">
-            <h2 class="skills__content-title">HTML</h2>
-            <p class="skills__content-subtitle">Advanced</p>
+            <h2 class="skills__content-title"><i class="fa-brands fa-html5"></i></h2>
+            <p class="skills__content-subtitle">HTML</p>
             </article>
 
             <article class="skills__content">
-            <h2 class="skills__content-title">CSS</h2>
-            <p class="skills__content-subtitle">intermediate</p>
+            <h2 class="skills__content-title"><i class="fa-brands fa-css3"></i></h2>
+            <p class="skills__content-subtitle">CSS</p>
             </article>
 
             <article class="skills__content">
-            <h2 class="skills__content-title">JAVASCRIPT</h2>
-            <p class="skills__content-subtitle">intermediate</p>
+            <h2 class="skills__content-title"><i class="fa-brands fa-js"></i></h2>
+            <p class="skills__content-subtitle">JAVASCRIPT</p>
             </article>
 
             <article class="skills__content">
-            <h2 class="skills__content-title">REACT</h2>
-            <p class="skills__content-subtitle">intermediate</p>
+            <h2 class="skills__content-title"><i class="fa-brands fa-react"></i></h2>
+            <p class="skills__content-subtitle">REACT</p>
             </article>
+
+            <article class="skills__content">
+                <h2 class="skills__content-title"><i class="fa-brands fa-npm"></i></h2>
+                <p class="skills__content-subtitle">NPM</p>
+                </article>
+
+            <article class="skills__content">
+                <h2 class="skills__content-title"><i class="fa-brands fa-node"></i></h2>
+                <p class="skills__content-subtitle">NODEJS</p>
+                </article>
             </div>
     </section>
-</div>
+</section>
 
     
    <!-- CONTACT SECTION -->
-    <div class="contact container" id="contact">
+    <section class="contact container" id="contact">
         <div class="contact__content">
  <h2 class="contact__title">Contact</h2>
   <p class="contact__description">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
@@ -180,7 +206,7 @@
 
 </form>
 
- </div>
+ </section>
 
 
     <!-- FOOTER SECTION -->
@@ -221,6 +247,11 @@
          
           </div>
     </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <script src="index.js"></script>
