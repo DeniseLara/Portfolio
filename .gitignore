@@ -42,6 +42,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+styles.txt
 
 # Optional npm cache directory
 .npm

@@ -85,7 +85,7 @@ html{
         height: 100%;
         z-index: 1;
         padding: 7.5rem 4rem;
-        border-left: 2px solid var(--blue-color);
+        border-left: 1px solid var(--blue-color);
         transition: right .4s;
     }
 }
@@ -262,24 +262,21 @@ html{
 
 
 
-/*--- MEDIAS QUERYS ---*/
-@media (min-width: 340px){
-
-    .principal__image {
-        display: block;
-        border: 1.5px solid var(--dark-blue);
-        width: 40vw; /* 40% del ancho del viewport */
-        height: 40vw; /* Asegura que la altura sea igual al ancho */
-        max-width: 100%; /* Limita el tamaño máximo a 10 rem */
-        max-height: 100%; /* Limita la altura máxima a 10 rem */ 
-        overflow: hidden; 
-        border-radius: 50%; 
-        box-shadow: 0 6px 30px rgba(76, 74, 74, 0.5); 
-        position: relative;
-        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; 
-        opacity: 0.55;
-        flex-shrink: 0; 
-    }
+.principal__image {
+    display: block;
+    border: 1.5px solid var(--dark-blue);
+    width: 40vw; /* 40% del ancho del viewport */
+    height: 40vw; /* Asegura que la altura sea igual al ancho */
+    max-width: 100%; /* Limita el tamaño máximo a 10 rem */
+    max-height: 100%; /* Limita la altura máxima a 10 rem */ 
+    overflow: hidden; 
+    border-radius: 50%; 
+    box-shadow: 0 6px 30px rgba(76, 74, 74, 0.5); 
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; 
+    opacity: 0.55;
+    flex-shrink: 0; 
+}
 
     .principal__img {
         display: block;
@@ -335,7 +332,7 @@ html{
     }
 
     .nav__menu{
-        width: 82%;
+        width: 87%;
     }
 
     .nav__link.button{
@@ -652,6 +649,10 @@ html{
         color: var(--dark-blue);
     }
 
+@media (min-width:340px){
+    .nav__menu{
+        width: 80.5%;
+    }
 }
 
 
