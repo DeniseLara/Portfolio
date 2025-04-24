@@ -1,36 +1,38 @@
+(function() {
+  // Esperar a que el DOM esté completamente cargado
+  document.addEventListener('DOMContentLoaded', () => {
 
-/*SHOW MENU*/
+  // SHOW MENU 
 const navMenu = document.getElementById("nav-menu"),
       navToggle = document.getElementById("nav-toggle"),
       navClose = document.getElementById("nav-close")
 
-/*MENU SHOW*/
+  // MENU SHOW
 if(navToggle){
     navToggle.addEventListener("click", () =>{
         navMenu.classList.add("show-menu")
     })
 }
 
-/*MENU HIDDEN*/
+  // MENU HIDDEN 
 if(navClose){
     navClose.addEventListener("click", () =>{
         navMenu.classList.remove("show-menu")
         handleScroll(); // Volver a evaluar si el navbar debe tener bg-header o no
-    })
+    });
 }
 
-/*REMOVER MENU MOBILE*/
+  // REMOVE MENU MOBILE
 const navLink = document.querySelectorAll(".nav__link")
 
 const linkAction = () =>{
-    const navMenu = document.getElementById("nav-menu")
     //cuando le haga click a cada nav__link, se removerá el show-menu (osea desaparecerá)
     navMenu.classList.remove("show-menu")
 }
 navLink.forEach(n => n.addEventListener("click", linkAction))
 
 
-/* MANTENER ACTIVO LINKS */
+/** MANTENER ACTIVO LINKS **/
 // Obtener todos los enlaces y secciones
 const navLinks = document.querySelectorAll('.nav__link');
 const sections = document.querySelectorAll('section');
@@ -41,9 +43,11 @@ function setActiveLink() {
 
     // Detectar cuál es la sección visible
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        if (window.scrollY >= sectionTop - 50 && window.scrollY < sectionTop + sectionHeight) {
+        // Usamos getBoundingClientRect() para obtener la posición y tamaño
+        const rect = section.getBoundingClientRect();
+        
+        // Comprobamos si la sección está visible en la ventana
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
             currentSection = section.id;
         }
     });
@@ -63,9 +67,7 @@ function setActiveLink() {
 }
 
 // Activar 'Home' por defecto al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('home').classList.add('active');
-});
+document.getElementById('home').classList.add('active');
 
 // Escuchar el scroll para actualizar el link activo
 window.addEventListener('scroll', setActiveLink);
@@ -74,8 +76,7 @@ window.addEventListener('scroll', setActiveLink);
 setActiveLink();
 
 
-
-/*CAMBIAR EL BACKGROUND DEL HEADER*/
+/** CHANGE BACKGROUND OF THE HEADER **/
 const header = document.getElementById('nav');
 
 function handleScroll() {
@@ -89,23 +90,20 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 
 //ANIMATIONS
-document.addEventListener('DOMContentLoaded', () => {
-  const sr = ScrollReveal({
-    origin: "top",
-    distance: "2rem",
-    duration: 2500,
-    delay: 400,
-  });
-
-  sr.reveal(`.principal, .projects`);
-  sr.reveal(`.aboutme`, { origin: 'right', distance: "1rem" });
-  sr.reveal(`.contact`, { origin: 'left', distance: "1rem" });
-  sr.reveal(` .footer`);
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "2rem",
+  duration: 2500,
+  delay: 400,
 });
 
+sr.reveal('.principal, .projects');
+sr.reveal('.aboutme', { origin: 'right', distance: "1rem" });
+sr.reveal('.contact', { origin: 'left', distance: "1rem" });
+sr.reveal('.footer');
 
-//SEND CONTACT FORM
 
+/** SEND CONTACT FORM **/
 // Función para validar el formato del correo electrónico
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -172,5 +170,8 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
       console.log('Error al enviar el correo:', error);
       showMessage('There was an error sending your message. Please try again later.', 'error');
     });
-});
+  });
+ });
+})();
+
 

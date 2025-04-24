@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/logoo.jpg" type="image/jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frontend Developer Portfolio - Denise Lara. Explore my projects and skills.">
+    <meta name="keywords" content="Frontend Developer, Denise Lara, HTML, CSS, JavaScript, React, Portfolio">
     <title>Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logoo.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Estilos principales -->
     <link rel="stylesheet" href="styles.css">
@@ -15,12 +25,6 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
 
@@ -36,7 +40,7 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#home" class="nav__link"><i class="ri-home-3-line"></i> Home</a>
+                    <a href="#" class="nav__link"><i class="ri-home-3-line"></i> Home</a>
                 </li>
     
                 <li class="nav__item">
@@ -53,95 +57,96 @@
             </ul>
     
             <!--CLOSE BUTTON-->
-            <div class="nav__close" id="nav-close">
+            <button class="nav__close" id="nav-close" aria-label="close menu">
                 <i class="ri-close-large-line"></i>
-            </div>
+            </button>
         </div>
     
         <!--TOGGLE MENU-->
-        <div class="nav__toggle" id="nav-toggle">
+        <button class="nav__toggle" id="nav-toggle" aria-label="open menu">
             <i class="ri-apps-2-line"></i>
-        </div>
+        </button>
       </nav>
     </header>
 
    
     <!-- HERO SECTION -->
     <section class="principal container" id="home">
-
     <div class="principal__image">
-        <img src="./images/denisee.jpg" alt="Denise Lara" class="principal__img">
+        <img src="./images/denisee.jpg" alt="Denise Lara" class="principal__img" loading="lazy">
     </div>
   
     <div class="principal__content">
         <h1 class="principal__title">Denise Lara</h1>
         <h3 class="principal__subtitle">Frontend Developer</h3>
         <p class="principal__description">I can create any website and take your project to the next level.</p>
-        <a class="principal__button" href="/cv/DeniseL.pdf">Download CV</a>
+        <a class="principal__button" href="/cv/DeniseL.pdf" rel="noopener noreferrer" aria-label="Download Denise Lara's CV">Download CV</a>
     </div>
-    
     </section>
 
 
     <!-- PROJECTS SECTION -->
     <main>
-        <section projects="projects" id="projects">
+        <section class="projects" id="projects">
         <h2 class="projects__title">Projects</h2>
 
         <div class="projects__container container">
          <article class="projects__content">
-            <a href="#" class="projects__image">
-                <img src="images/image.png" alt="image" class="projects__image">
-            </a>
-
+                <img src="images/image.png" alt="Caloriepro webapp homepage image" class="projects__image" loading="lazy">
             <div class="projects__data">
                 <h3 class="projects__name">CaloriePro</h3>
                 <p class="projects__description">
-                    Web app to search calories, log foods, and store intake history, with a personalized profile.
+                    Web app to search calories, log foods, and store intake 
+                    history, with a personalized profile.
                 </p>
             </div>
 
             <div class="projects__skills">
-                <img src="images/html-5.png" alt="image" class="projects__skill">
-                <img src="images/css-3.png" alt="image" class="projects__skill">
-                <img src="images/js.png" alt="image" class="projects__skill">
-                <img src="images/react.png" alt="" class="projects__skill">
-
+                <img src="images/html-5.png" alt="HTML icon" class="projects__skill">
+                <img src="images/css-3.png" alt="CSS icon" class="projects__skill">
+                <img src="images/js.png" alt="Javascript icon" class="projects__skill">
+                <img src="images/react.png" alt="React icon" class="projects__skill">
             </div>
 
-            <a href="https://caloriepro.onrender.com" class="projects__button">
+            <a href="https://caloriepro.onrender.com" 
+            class="projects__button"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
                 <i class="ri-link"></i>
                 <span>Visit Project</span>
             </a>
          </article>
 
          <article class="projects__content">
-            <a href="#" class="projects__image">
-                <img src="images/cinevibe.png" alt="image" class="projects__image">
-            </a>
-
+            <img src="images/cinevibe.png" alt="Cinevibe website homepage image" class="projects__image" loading="lazy">
             <div class="projects__data">
                 <h3 class="projects__name">CineVibe</h3>
                 <p class="projects__description">
-                    A movie discovery site to explore trailers, details, and ratings, with options to save favorites.            </div>
-
-            <div class="projects__skills">
-                <img src="images/html-5.png" alt="image" class="projects__skill">
-                <img src="images/css-3.png" alt="image" class="projects__skill">
-                <img src="images/js.png" alt="image" class="projects__skill">
-                <img src="images/react.png" alt="" class="projects__skill">
-
+                    A movie discovery site to explore trailers, details, 
+                    and ratings, with options to save favorites.  
+                </p>         
             </div>
 
-            <a href="https://cinevibe-o7ln.onrender.com" class="projects__button">
+            <div class="projects__skills">
+                <img src="images/html-5.png" alt="HTML icon" class="projects__skill">
+                <img src="images/css-3.png" alt="CSS icon" class="projects__skill">
+                <img src="images/js.png" alt="Javascript icon" class="projects__skill">
+                <img src="images/react.png" alt="React icon" class="projects__skill">
+            </div>
+
+            <a href="https://cinevibe-o7ln.onrender.com" 
+            class="projects__button"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
                 <i class="ri-link"></i>
                 <span>Visit Project</span>
             </a>
          </article>
-
-        </div>
-        </section>
-    </main>
+       </div>
+    </section>
+</main>
     
 
      <!-- ABOUT ME SECTION -->
@@ -185,27 +190,28 @@
             <article class="skills__content">
                 <h2 class="skills__content-title"><i class="fa-brands fa-node"></i></h2>
                 <p class="skills__content-subtitle">NODEJS</p>
-                </article>
-            </div>
+            </article>
+        </div>
     </section>
 </section>
 
     
    <!-- CONTACT SECTION -->
     <section class="contact container" id="contact">
-        <div class="contact__content">
- <h2 class="contact__title">Contact</h2>
-  <p class="contact__description">I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.</p>
-</div>
+    <article class="contact__content">
+      <h2 class="contact__title">Contact</h2>
+      <p class="contact__description">
+        I would love to hear about your project and how I could help. 
+        Please fill in the form, and I’ll get back to you as soon as possible.</p>
+     </article>
+
   <form action="https://portfolio-1-5lml.onrender.com/send-email" id="contact-form" class="contact__form" method="POST">
     <input type="text" class="contact__form-input" placeholder="NAME" name="name" required>
     <input type="email" class="contact__form-input" placeholder="EMAIL" name="email" required>
     <textarea type="text" class="contact__form-input message" placeholder="MESSAGE" name="message" required></textarea>
-    <button type="submit" class="contact__form-button">Send message</button>
+    <button type="submit" class="contact__form-button" aria-label="send message">Send message</button>
     <div class="form-message" id="form-message"></div>
-
-</form>
-
+  </form>
  </section>
 
 
@@ -215,36 +221,56 @@
           <div class="footer-socials">
             <ul class="footer-socials-list">
                 <li class="footer-socials-item">
-                    <a class="footer-socials-link" href="https://www.linkedin.com/in/denise-lara-925458320"><i class="ri-linkedin-box-fill"></i></a>
+                    <a class="footer-socials-link" 
+                    href="https://www.linkedin.com/in/denise-lara-925458320" 
+                    aria-label="Linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <i class="ri-linkedin-box-fill"></i>
+                    </a>
                 </li>
+
                 <li class="footer-socials-item">
-                    <a class="footer-socials-link" href="https://github.com/DeniseLara"><i class="ri-github-fill"></i></a>
-                </li>
-               </ul>
+                    <a class="footer-socials-link" 
+                    href="https://github.com/DeniseLara" 
+                    aria-label="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <i class="ri-github-fill"></i>
+                    </a>
+                 </li>
+              </ul>
           </div>
 
-          <div className="footer-links">
+          <div class="footer-links">
             <h4 class="footer-links-title">Quick Links</h4>
-            <ul className="footer-link-list">
-              <li><a class="footer-link" href="#home" id="home">Home</a></li>
-              <li><a class="footer-link" href="#projects" id="projects">Projects</a></li>
-              <li><a class="footer-link" href="#about" id="about">About me</a></li>
-              <li><a class="footer-link" href="#contact" id="contact">Contact me</a></li>
+            <ul class="footer-link-list">
+              <li><a class="footer-link" href="#">Home</a></li>
+              <li><a class="footer-link" href="#projects">Projects</a></li>
+              <li><a class="footer-link" href="#about">About me</a></li>
+              <li><a class="footer-link" href="#contact">Contact me</a></li>
             </ul>
           </div>
        
           <div class="footer-credits-rights">
-            <ul class="footer-credits-rights-list">
-            <li>Icons by <a class="footer-credits-right" href="https://remixicon.com/" target="_blank" >Remix Icon</a></li> 
-            <li>Images from <a class="footer-credits-right" href="https://www.flaticon.com/" target="_blank" >Flaticon</a></li>
-            <li>Fonts by <a class="footer-credits-right" href="https://fonts.google.com/" target="_blank" >Google Fonts</a></li>
-        </ul>
+           <ul class="footer-credits-rights-list">
+            <li>Icons by 
+                <a class="footer-credits-right" href="https://remixicon.com/" target="_blank" aria-label="go to remixicon website">Remix Icon</a>
+            </li> 
+            <li>Images from 
+                <a class="footer-credits-right" href="https://www.flaticon.com/" target="_blank" aria-label="go to flaticon website">Flaticon</a>
+            </li>
+            <li>Fonts by 
+                <a class="footer-credits-right" href="https://fonts.google.com/" target="_blank" aria-label="go to google fonts website">Google Fonts</a>
+            </li>
+           </ul>
         </div>
     </div>
 
           <div class="footer__credits">
             <p class="footer__credits-title">© 2024 Denise Lara. All rights reserved.</p>
-         
           </div>
     </footer>
 
