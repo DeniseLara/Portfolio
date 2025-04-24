@@ -327,7 +327,7 @@ html{
     border: 1px solid var(--header-gray-color);
 }
 
-.nav__link.nav__link.button:hover{
+.nav__link.button:hover{
     background-color: var(--blue-color);
     color: var(--white-color);
 }
