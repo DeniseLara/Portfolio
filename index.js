@@ -94,8 +94,7 @@ const sr = ScrollReveal({
   origin: "top",
   distance: "2rem",
   duration: 1800,
-  delay: 400,
-  reset: false
+  delay: 400
 });
 
 sr.reveal('.principal, .projects');
