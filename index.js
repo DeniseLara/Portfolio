@@ -93,14 +93,15 @@ window.addEventListener('scroll', handleScroll);
 const sr = ScrollReveal({
   origin: "top",
   distance: "2rem",
-  duration: 2500,
+  duration: 1500,
   delay: 400,
+  reset: false
 });
 
 sr.reveal('.principal, .projects');
 sr.reveal('.aboutme', { origin: 'right', distance: "1rem" });
 sr.reveal('.contact', { origin: 'left', distance: "1rem" });
-sr.reveal('.footer');
+sr.reveal('.footer', { delay: 300 });
 
 
 /** SEND CONTACT FORM **/
