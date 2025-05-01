@@ -93,7 +93,7 @@ window.addEventListener('scroll', handleScroll);
 const sr = ScrollReveal({
   origin: "top",
   distance: "2rem",
-  duration: 1800,
+  duration: 1600,
   delay: 400
 });
 
