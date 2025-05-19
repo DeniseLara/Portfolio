@@ -289,7 +289,7 @@ html{
     background: 
         linear-gradient(#0f0c29, #302b63) padding-box, 
         linear-gradient(135deg, #66B2FF, #845EC2) border-box;
-    width: clamp(11.25rem, 35vw, 28.125rem); /* 180px – 450px */
+    width: clamp(12rem, 36vw, 28.125rem); /* 180px – 450px */
     aspect-ratio: 1 / 1; /* fuerza que sea cuadrado */
     overflow: hidden; 
     border-radius: 50%;

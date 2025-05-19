@@ -31,7 +31,9 @@ const navLink = document.querySelectorAll(".nav__link")
 
 const linkAction = () =>{
     //cuando le haga click a cada nav__link, se removerá el show-menu (osea desaparecerá)
-    navMenu.classList.remove("show-menu")
+    navMenu.classList.remove("show-menu");
+    overlay.classList.remove('active');
+
 }
 navLink.forEach(n => n.addEventListener("click", linkAction))
 
