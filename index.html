@@ -30,6 +30,9 @@
 
 
 <body>
+     <!-- SPOTLIGHT EFFECT 
+    <div class="spotlight"></div> -->
+    
     <!--NAVBAR SECTION-->
     <header class="header" id="nav">
         <nav class="nav container">
@@ -69,18 +72,51 @@
       </nav>
     </header>
 
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
    
     <!-- HERO SECTION -->
     <section class="principal container" id="home">
     <div class="principal__image">
-        <img src="./images/denisee.jpg" alt="Denise Lara" class="principal__img" loading="lazy">
+        <img src="./images/deni.png" alt="Denise Lara" class="principal__img" loading="lazy">
     </div>
   
     <div class="principal__content">
         <h1 class="principal__title">Denise Lara</h1>
         <h3 class="principal__subtitle">Frontend Developer</h3>
         <p class="principal__description">I can create any website and take your project to the next level.</p>
+        
+        <div class="contacts__container">
         <a class="principal__button" href="/cv/DeniseL.pdf" rel="noopener noreferrer" aria-label="Download Denise Lara's CV">Download CV</a>
+
+        <div class="footer-socials">
+            <ul class="footer-socials-list">
+                <li class="footer-socials-item">
+                    <a class="footer-socials-link" 
+                    href="https://www.linkedin.com/in/denise-lara-925458320" 
+                    aria-label="Linkedin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                </li>
+
+                <li class="footer-socials-item">
+                    <a class="footer-socials-link" 
+                    href="https://github.com/DeniseLara" 
+                    aria-label="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                        <i class="ri-github-fill"></i>
+                    </a>
+                 </li>
+              </ul>
+          </div>
+          </div>
+
     </div>
     </section>
 
@@ -92,7 +128,7 @@
 
         <div class="projects__container container">
          <article class="projects__content">
-                <img src="images/image.png" alt="Caloriepro webapp homepage image" class="projects__image" loading="lazy">
+                <img src="images/calorieproo.jpg" alt="Caloriepro webapp homepage image" class="projects__image" loading="lazy">
             <div class="projects__data">
                 <h3 class="projects__name">CaloriePro</h3>
                 <p class="projects__description">
@@ -119,7 +155,7 @@
          </article>
 
          <article class="projects__content">
-            <img src="images/cinevibe.png" alt="Cinevibe website homepage image" class="projects__image" loading="lazy">
+            <img src="images/cinevibee.jpg" alt="Cinevibe website homepage image" class="projects__image" loading="lazy">
             <div class="projects__data">
                 <h3 class="projects__name">CineVibe</h3>
                 <p class="projects__description">
@@ -136,6 +172,32 @@
             </div>
 
             <a href="https://cinevibe-o7ln.onrender.com" 
+            class="projects__button"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+                <i class="ri-link"></i>
+                <span>Visit Project</span>
+            </a>
+         </article>
+
+          <article class="projects__content">
+            <img src="images/proyecto3.jpg" alt="Cinevibe website homepage image" class="projects__image" loading="lazy">
+            <div class="projects__data">
+                <h3 class="projects__name">Buynow</h3>
+                <p class="projects__description">
+Online store simulation where users log in, add products to cart, and simulate purchases with Stripe.
+                </p>         
+            </div>
+
+            <div class="projects__skills">
+                <img src="images/html-5.png" alt="HTML icon" class="projects__skill">
+                <img src="images/css-3.png" alt="CSS icon" class="projects__skill">
+                <img src="images/js.png" alt="Javascript icon" class="projects__skill">
+                <img src="images/react.png" alt="React icon" class="projects__skill">
+            </div>
+
+            <a href="https://buynow-hqd4.onrender.com" 
             class="projects__button"
             target="_blank"
             rel="noopener noreferrer"
@@ -218,32 +280,6 @@
     <!-- FOOTER SECTION -->
     <footer>          
          <div class="footer container">
-          <div class="footer-socials">
-            <ul class="footer-socials-list">
-                <li class="footer-socials-item">
-                    <a class="footer-socials-link" 
-                    href="https://www.linkedin.com/in/denise-lara-925458320" 
-                    aria-label="Linkedin"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                        <i class="ri-linkedin-box-fill"></i>
-                    </a>
-                </li>
-
-                <li class="footer-socials-item">
-                    <a class="footer-socials-link" 
-                    href="https://github.com/DeniseLara" 
-                    aria-label="Github"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                        <i class="ri-github-fill"></i>
-                    </a>
-                 </li>
-              </ul>
-          </div>
-
           <div class="footer-links">
             <h4 class="footer-links-title">Quick Links</h4>
             <ul class="footer-link-list">
@@ -255,6 +291,7 @@
           </div>
        
           <div class="footer-credits-rights">
+            <h4 class="footer-links-title">Resources & Credits</h4>
            <ul class="footer-credits-rights-list">
             <li>Icons by 
                 <a class="footer-credits-right" href="https://remixicon.com/" target="_blank" aria-label="go to remixicon website">Remix Icon</a>
@@ -277,8 +314,6 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <script src="index.js"></script>
 </body>

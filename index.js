@@ -5,19 +5,23 @@
   // SHOW MENU 
 const navMenu = document.getElementById("nav-menu"),
       navToggle = document.getElementById("nav-toggle"),
-      navClose = document.getElementById("nav-close")
+      navClose = document.getElementById("nav-close"),
+      overlay = document.getElementById('overlay')
+
 
   // MENU SHOW
 if(navToggle){
     navToggle.addEventListener("click", () =>{
-        navMenu.classList.add("show-menu")
+        navMenu.classList.add("show-menu");
+        overlay.classList.add('active');
     })
 }
 
   // MENU HIDDEN 
 if(navClose){
     navClose.addEventListener("click", () =>{
-        navMenu.classList.remove("show-menu")
+        navMenu.classList.remove("show-menu");
+        overlay.classList.remove('active');
         handleScroll(); // Volver a evaluar si el navbar debe tener bg-header o no
     });
 }
@@ -173,5 +177,20 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   });
  });
 })();
+
+
+
+/** **/
+
+/** SPOTLIGHT EFFECT 
+const spotlight = document.querySelector('.spotlight');
+
+if (window.matchMedia('(pointer: fine)').matches) {
+  document.addEventListener('mousemove', (e) => {
+    spotlight.style.left = `${e.clientX}px`;
+    spotlight.style.top = `${e.clientY}px`;
+  });
+}**/
+
 
 
