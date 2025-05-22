@@ -41,7 +41,6 @@ html{
     overflow-x: hidden;
 }  
 
-
 .logo__content p span{
     color: var(--white-color);
 }
@@ -69,8 +68,8 @@ html{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 12, 41, 0.6); /* color oscuro con transparencia */
-  z-index: 20; /* justo debajo del nav__menu */
+  background-color: rgba(15, 12, 41, 0.6); 
+  z-index: 20; 
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
@@ -82,12 +81,10 @@ html{
   pointer-events: all;
 }
 
-
 .logo__content{
     color: var(--primary-color);
     font-weight: 700;
     font-size: var(--fs-lg);
-    /*font-size: clamp(1.2rem, 3vw, 1.8rem); /* 19.2px – 28.8px */
 }
 
 .nav{
@@ -101,7 +98,6 @@ html{
 .nav__toggle,
 .nav__close{
     font-size: var(--fs-lg);
-    /*font-size: clamp(1.2rem, 3vw, 2rem); /* 19.2px – 32px */
     padding: 0;
     background-color: transparent;
     outline: none;
@@ -136,7 +132,6 @@ html{
 .nav__link{
     color: var(--white-color);
     font-size: var(--fs-base);
-    /*font-size: clamp(0.875rem, 1.5vw, 1rem); /* entre 14px y 16px */
     font-weight: 500;
     transition: color .4s;
     display: flex;
@@ -144,10 +139,6 @@ html{
     align-items: center;
     justify-items: center;
 }
-
-/*.nav__link i{
-    font-size: 1rem;
-}*/
   
 .nav__link:hover,
 .nav__link.active{
@@ -173,7 +164,6 @@ html{
 }
 
 .principal__title{
-    /*font-size: clamp(2.5rem, 6vw, 4rem); /* entre 40px y 64px */
     font-size: var(--fs-3xl);
     font-weight: 900;
     letter-spacing: 1px;
@@ -184,7 +174,6 @@ html{
 }
 
 .principal__description{
-    /*font-size: clamp(1rem, 2vw, 1.25rem); /* 16–20px */
     font-weight: 200;
     font-size: var(--fs-md);
     margin-bottom: 2rem;
@@ -198,7 +187,6 @@ html{
     padding: 1rem;
     display: inline-block;
     font-size: var(--fs-md);
-    /*font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* 15–17.6px */
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     box-shadow: 0 4px 12px rgba(34, 114, 255, 0.4);
@@ -221,7 +209,6 @@ html{
     font-family: "Merriweather", serif;
     letter-spacing: 0.5rem;
     font-size: var(--fs-xl);
-    /*font-size: clamp(1.8rem, 4.5vw, 3rem); /* 28.8px – 48px */
     text-align: center;
 }
 
@@ -239,17 +226,9 @@ html{
 .projects__description{
     text-wrap: pretty;
     font-size: var(--fs-base);
-    /*font-size: clamp(0.95rem, 1.8vw, 1.125rem); /* 15.2–18px */
     margin-bottom: 1rem;
     color: #b0b0d0;
 }
-
-/*.projects__image{
-    display: block;
-    max-width: 50%;
-    margin-bottom: 0.5rem;
-}*/
-
 
 /*FORM MESSAGE*/
 .form-message {
@@ -257,7 +236,6 @@ html{
     padding: 1rem; 
     border-radius: 0.8rem;
     font-size: var(--fs-sm);
-    /*font-size: clamp(0.95rem, 1.8vw, 1.125rem); /* 15.2px – 18px */
     font-weight: 400; 
     text-align: start;
     margin-top: 0.5rem ;
@@ -289,15 +267,14 @@ html{
     background: 
         linear-gradient(#0f0c29, #302b63) padding-box, 
         linear-gradient(135deg, #66B2FF, #845EC2) border-box;
-    width: clamp(12rem, 36vw, 28.125rem); /* 180px – 450px */
-    aspect-ratio: 1 / 1; /* fuerza que sea cuadrado */
+    width: clamp(12rem, 36vw, 28.125rem); 
+    aspect-ratio: 1 / 1; 
     overflow: hidden; 
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(34, 114, 255, 0.4);
     position: relative;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease; 
     opacity: 0.9;
-    /*flex-shrink: 0;*/
 }
  
 .principal__img {
@@ -323,7 +300,6 @@ html{
 
 .principal__subtitle{
     font-size: var(--fs-xl);
-    /*font-size: clamp(1.2rem, 3vw, 1.8rem); /* entre 19px y 29px */
     font-weight: 600;
     color: #89CFF0;
     margin-bottom: 1rem;
@@ -350,10 +326,9 @@ html{
 }
 
 .nav__menu{
-    /*width: 87.5%;*/
     position: fixed;
     z-index: 30;
-    width: clamp(17.5rem, 15rem + 12vw, 20rem); /* igual que los clamp de texto, pero en rem y vw */
+    width: clamp(17.5rem, 15rem + 12vw, 20rem); 
 }
 
 .nav__link.button{
@@ -382,11 +357,6 @@ html{
     gap: 2rem;
     justify-content: center;
 }
-
-/*.projects__skills{
-    max-width: 65%;
-    margin-bottom: 0.5rem;
-}*/
 
 .projects__skills{
     display: flex;
@@ -418,7 +388,6 @@ html{
 .projects__name {
     color: var(--white-color);
     font-size: var(--fs-md);
-    /*font-size: clamp(1.2rem, 2.8vw, 1.6rem); /* 19px – 25.6px */
     font-weight: bold;
     transition: color .3s;
     margin-bottom: 0.5rem;
@@ -429,14 +398,9 @@ html{
     margin-bottom: 0.5rem;
     border-radius: 1rem;   
 }
-    
-/*.projects__skill{
-    max-width: 10%;
-    margin-bottom: 0.5rem;
-}*/
 
 .projects__skill{
-    width: var(--fs-md);/* Mejor relación con el sistema tipográfico */
+    width: var(--fs-md);
     height: auto;
     opacity: 0.8;
     transition: all .3s ease;
@@ -448,7 +412,6 @@ html{
     
 .projects__button{
     font-size: var(--fs-sm);
-    /*font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* 15px – 17.6px */
     color: var(--secondary-color);
     transition: color .4s ease;
 }    
@@ -472,7 +435,6 @@ html{
 
 .aboutme__title{
     font-size: var(--fs-xl);
-    /*font-size: clamp(1.6rem, 4vw, 2.5rem); /* 25.6–40px */
     margin-bottom: 1rem;
     color: var(--secondary-color);
     text-align: center;
@@ -481,7 +443,6 @@ html{
 
 .aboutme__description{
     font-size: var(--fs-base);
-    /*font-size: clamp(1rem, 2vw, 1.2rem); /* 16–19.2px */
     color: #D3D3D3;
     line-height: 1.6rem;
 }
@@ -494,7 +455,6 @@ html{
 
 .skills__title{
     font-size: var(--fs-lg);
-    /*font-size: clamp(1.5rem, 3.5vw, 2.25rem); /* 24–36px */
     font-family: "Merriweather", serif;
     text-transform: uppercase;
     margin-bottom: 1.8rem;
@@ -535,7 +495,6 @@ html{
 .skills__content-title i {
     margin-bottom: 0.6rem;
     font-size: var(--fs-2xl);
-    /*font-size: clamp(2rem, 5vw, 3rem); /* 32–48px */
     color: #BBBBBB; 
     transition: text-shadow 0.3s ease-in-out, transform 0.4s ease-in-out;
 }
@@ -549,7 +508,6 @@ html{
 
 .skills__content-subtitle{
     font-size: var(--fs-sm);
-    /*font-size: clamp(1rem, 2vw, 1.125rem); /* 16–18px */
     color: #CCCCCC;
 }
   
@@ -569,7 +527,6 @@ html{
   
 .contact__title {
     font-size: var(--fs-xl);
-    /*font-size: clamp(1.6rem, 4vw, 2.5rem); /* 25.6–40px */
     text-transform: uppercase;
     color: var(--secondary-color);
     text-shadow: 0 0 8px rgba(102, 178, 255, 0.3);
@@ -578,7 +535,6 @@ html{
   
 .contact__description {
     font-size: var(--fs-base);
-    /*font-size: clamp(1rem, 2vw, 1.2rem); /* 16–19.2px */
     color: #E0E0E0;
     line-height: 1.8;
     max-width: 100%;
@@ -600,7 +556,6 @@ html{
 .contact__form-input,
 .contact__form textarea {
     font-size: var(--fs-sm);
-    /*font-size: clamp(1rem, 1.8vw, 1.125rem); /* 16–18px */
     width: 100%;
     padding: 0.8rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -625,7 +580,6 @@ html{
   
 .contact__form-button {
     font-size: var(--fs-base);
-    /*font-size: clamp(1rem, 1.8vw, 1.125rem); /* 16–18px */
     padding: 1rem 1.5rem;
     background-color: var(--blue-color);
     color: var(--white-color);
@@ -656,14 +610,11 @@ html{
     align-items: center;
     justify-content: center;
     font-size: var(--fs-xl);
-    /*font-size: clamp(1.2rem, 3vw, 2rem); /* 19–32px */
     color: var(--primary-color);
     background-color: rgba(56, 189, 248, 0.1);
     border-radius: 50%;
     transition: all .3s ease-in-out;
 }
-
-
 
 .footer-socials-link:hover {
     background-color: rgba(56, 189, 248, 0.15); 
@@ -716,7 +667,6 @@ footer{
 .footer__credits-title{
     font-weight: 400;
     font-size: var(--fx-xs);
-    /*font-size: clamp(0.9rem, 1.5vw, 1rem); /* 14.4–16px */
     color: #94A3B8; 
 }
 
@@ -727,7 +677,6 @@ footer{
 
 .footer-links-title{
     font-size: var(--fs-base);
-    /*font-size: clamp(1.1rem, 2vw, 1.25rem); /* 17.6–20px */
     color: #60A5FA; 
     margin-bottom: 0.6rem;
 }
@@ -741,7 +690,6 @@ footer{
 
 .footer-link, .footer-credits-right{
     font-size: var(--fs-sm);
-    /*font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* 15.2–17.6px */
     color: #A5B4FC; 
     transition: color .4s;
 }
@@ -754,32 +702,7 @@ footer{
 
 
 /** --- MEDIAS QUERYS --- **/
-@media (min-width:340px){
-    .nav__menu{
-        /*width: 82%;*/
-    }
-}
-
-
-@media (min-width:360px){
-    .nav__menu{
-       /* width: 78%;*/
-    }
-}
-
-
-@media (min-width:400px){
-    .nav__menu{
-       /* width: 70%;*/
-      }
-}
-
-
 @media (min-width: 768px){
-    /*.principal__image {
-        width: 40vw; 
-        height: 40vw;
-    }*/
 
     .nav__close{
         right: 2.5rem;
@@ -803,10 +726,6 @@ footer{
         repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
         justify-content: center;
-    }
-
-    .nav__menu{
-        /*width: 50%;*/
     }
 
     .principal__button{
@@ -862,7 +781,6 @@ footer{
 
     .footer-socials-link {
         padding: 0.6rem;
-        /*font-size: 2.7rem;*/
     }
 }
 
@@ -874,18 +792,12 @@ footer{
         justify-content: space-between;
         gap: 2rem;
     }
-
-    /*.principal__image {
-        width: 55vw; 
-        height: 36vw;
-    }*/
     
     .principal__content{
         text-align: start;
-       /* flex: 50%; /*nuevo*/
     }
 
-     .principal__description{
+    .principal__description{
         margin-bottom: 1.5rem;
     }
 
@@ -929,10 +841,6 @@ footer{
     .projects__container{
         gap: 2rem;
     }
-
-    /*.projects__skill{
-        max-width: 15%;
-    }*/
  
     .nav__menu i{
         display: none;
@@ -1004,11 +912,6 @@ footer{
         height: 6rem;
     }
 
-    /*.principal__image {
-        width: 30vw; 
-        height: 30vw; 
-    }*/
-
    .principal{
         margin-bottom: 4rem;
         padding-top: 4rem;
@@ -1047,7 +950,6 @@ footer{
     }
 
     .about__container{
-        /*min-height: calc(100vh - 6rem);*/
         display: flex;
         justify-content: center;
         flex-direction: column;
