@@ -182,17 +182,4 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
 
 
 
-/** **/
-
-/** SPOTLIGHT EFFECT 
-const spotlight = document.querySelector('.spotlight');
-
-if (window.matchMedia('(pointer: fine)').matches) {
-  document.addEventListener('mousemove', (e) => {
-    spotlight.style.left = `${e.clientX}px`;
-    spotlight.style.top = `${e.clientY}px`;
-  });
-}**/
-
-
 
