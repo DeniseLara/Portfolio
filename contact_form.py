@@ -65,4 +65,4 @@ def send_email():
         return jsonify({"success": False, "message": "Error sending email"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
