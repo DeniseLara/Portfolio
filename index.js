@@ -136,9 +136,15 @@ function showMessage(message, type) {
   }, 5000); // 5000 ms = 5 segundos
 }
 
-// Captura el formulario y maneja el evento de envío
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault(); // Evita que la página se recargue
+// Lógica del envío
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  let isSending = false;
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+  if (isSending) return;
 
   const email = document.querySelector('input[name="email"]').value;
   const message = document.querySelector('textarea[name="message"]').value;
@@ -156,6 +162,11 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     return; // Detiene el envío si el dominio no está permitido
   }
 
+    // Bloquear múltiples envíos
+    isSending = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
   // Si todo es válido, enviamos los datos al backend en Python
   fetch("https://portfolio-1-5lml.onrender.com/send-email", {
     method: 'POST',
@@ -168,16 +179,21 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     .then((data) => {
       if (data.success) {
         showMessage('Your message has been sent successfully!', 'success');
+        contactForm.reset();
       } else {
         showMessage('There was an error sending your message. Please try again later.', 'error');
       }
     })
     .catch((error) => {
-      console.log('Error al enviar el correo:', error);
       showMessage('There was an error sending your message. Please try again later.', 'error');
+    })
+    .finally(() => {
+      isSending = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
     });
+   });
   });
- });
 })();
 
 
