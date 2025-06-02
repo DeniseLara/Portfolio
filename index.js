@@ -95,7 +95,7 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
-//ANIMATIONS
+//ANIMACIONES
 const sr = ScrollReveal({
   origin: "top",
   distance: "1.5rem",
