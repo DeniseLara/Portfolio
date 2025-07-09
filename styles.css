@@ -375,14 +375,17 @@ html{
     justify-content: space-between;
     text-align: start;
     border-radius: 1.5rem;
-    transition: all .4s ease-in-out;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: all .3s ease-in-out;
     color: var(--white-color);
 }
 
 .projects__content:hover{
     background-color: rgba(255, 255, 255, 0.1); 
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); 
-    transform: scale(1.05); 
+    transform: translateY(-0.5rem);
 }
 
 .projects__name {
@@ -525,7 +528,8 @@ html{
     margin-bottom: 0.6rem;
     font-size: var(--fs-2xl);
     color: #BBBBBB; 
-    transition: text-shadow 0.3s ease-in-out, transform 0.4s ease-in-out;
+    will-change: transform, text-shadow;
+    transition: text-shadow 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
   
 .skills__content:hover .skills__content-title i {
